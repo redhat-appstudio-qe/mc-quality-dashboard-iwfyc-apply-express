@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: backend-quality-dashboard-eh1t
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: backend-quality-dashboard-eh1t
+    app.kubernetes.io/part-of: mc-quality-dashboard
+  name: backend-quality-dashboardv3j8
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: backend-quality-dashboard-eh1t
+    weight: 100
+status: {}
